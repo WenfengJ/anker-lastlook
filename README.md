@@ -14,6 +14,18 @@ npm start
 http://127.0.0.1:4173
 ```
 
+线上演示地址：
+
+```text
+https://13-57-166-217.sslip.io/lastlook/
+```
+
+线上 API：
+
+```text
+https://13-57-166-217.sslip.io/lastlook-api/health
+```
+
 ## 当前实现
 
 - 前端静态页面：`public/index.html`
