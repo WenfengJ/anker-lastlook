@@ -3,6 +3,8 @@ const state = {
   lastCheckId: null
 };
 
+const apiBase = window.location.pathname.startsWith("/lastlook/") ? "/lastlook-api" : "/api";
+
 const scenarioButtons = [...document.querySelectorAll(".scenario")];
 const startButton = document.querySelector("#startCheck");
 const saveBaselineButton = document.querySelector("#saveBaseline");
@@ -22,7 +24,7 @@ const deviceGrid = document.querySelector("#deviceGrid");
 const baselineMeta = document.querySelector("#baselineMeta");
 
 async function api(path, options = {}) {
-  const response = await fetch(`/api${path}`, {
+  const response = await fetch(`${apiBase}${path}`, {
     headers: { "content-type": "application/json" },
     ...options
   });
