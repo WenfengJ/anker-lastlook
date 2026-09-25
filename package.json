@@ -1,0 +1,13 @@
+{
+  "name": "lastlook-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LastLook front-end and backend demo for stove check flow.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node scripts/smoke-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

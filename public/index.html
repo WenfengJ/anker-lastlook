@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LastLook</title>
+    <link rel="stylesheet" href="/styles.css?v=visual-3" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="stage-copy">
+        <div>
+          <p class="eyebrow">LastLook</p>
+          <h1>出门后，再看一眼灶台</h1>
+          <p class="hero-copy">eufy 摄像头转向灶台预设位，拍下当前状态，并给出带证据的确认卡片。</p>
+        </div>
+      </section>
+
+      <section class="demo-stage">
+        <div class="phone-shell" aria-label="LastLook 手机演示">
+          <div class="phone-status">
+            <span>9:41</span>
+            <span>eufy Home</span>
+          </div>
+
+          <section class="app-hero">
+            <div>
+              <p class="section-label">LASTLOOK</p>
+              <h2 id="todayTitle">准备检查灶台</h2>
+              <p id="todayCopy">选择一个演示场景，然后开始出门检查。</p>
+            </div>
+            <div class="camera-chip" id="deviceSummary">设备状态加载中</div>
+          </section>
+
+          <section class="quick-card">
+            <div class="quick-card-copy">
+              <span class="card-icon">PTZ</span>
+              <div>
+                <h3>灶台检查点</h3>
+                <p>预设位已保存，只在出门检查时转向灶台。</p>
+              </div>
+            </div>
+            <button class="primary" id="startCheck">开始出门检查</button>
+          </section>
+
+          <section class="mini-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-label">全关基准照片</p>
+                <h3>灶台关闭状态</h3>
+              </div>
+              <button class="icon-button" id="saveBaseline" title="更新基准照片">↻</button>
+            </div>
+            <div class="photo-card">
+              <div class="photo-toolbar">
+                <span>全关基准</span>
+                <span>预设位 01</span>
+              </div>
+              <div class="stove baseline" aria-label="全关基准照片">
+                <span class="burner burner-a"></span>
+                <span class="burner burner-b"></span>
+                <span class="burner burner-c"></span>
+                <span class="burner burner-d"></span>
+                <span class="knob knob-a off"></span>
+                <span class="knob knob-b off"></span>
+                <span class="knob knob-c off"></span>
+              </div>
+              <p id="baselineMeta">基准照片加载中</p>
+            </div>
+          </section>
+
+          <section class="check-panel hidden" id="checkingPanel">
+            <p class="section-label">出门检查中</p>
+            <h2>正在检查灶台</h2>
+            <p>摄像头正在转向灶台预设位，预计 30 秒内完成。</p>
+            <div class="camera-motion">
+              <span></span>
+            </div>
+            <ol class="steps" id="steps"></ol>
+          </section>
+
+          <section class="result-panel hidden" id="resultPanel">
+            <div class="result-header">
+              <span class="result-tag" id="resultTag">已确认</span>
+              <div>
+                <p class="section-label">检查结果</p>
+                <h2 id="resultTitle">灶台已确认关闭</h2>
+              </div>
+            </div>
+            <p id="resultReason">旋钮位置与基准照片一致。可以放心出门。</p>
+
+            <div class="evidence-grid">
+              <div class="evidence-card">
+                <div class="photo-toolbar">
+                  <span>当前照片</span>
+                  <span>08:42</span>
+                </div>
+                <div id="currentPhoto" class="stove confirmed" aria-label="当前照片"></div>
+              </div>
+              <div class="evidence-card">
+                <div class="photo-toolbar">
+                  <span>全关基准</span>
+                  <span>预设位 01</span>
+                </div>
+                <div class="stove baseline" aria-label="全关基准照片"></div>
+              </div>
+            </div>
+
+            <div class="reason-list" id="reasonList"></div>
+            <div class="actions" id="resultActions"></div>
+          </section>
+        </div>
+
+        <aside class="control-dock">
+          <section class="dock-card">
+            <div class="panel-heading">
+              <div>
+                <p class="section-label">Demo 场景</p>
+                <h2>切换检查结果</h2>
+              </div>
+              <span class="tag">演示模式</span>
+            </div>
+            <div class="scenario-group" role="group" aria-label="Demo 场景">
+              <button class="scenario active" data-scenario="confirmed">已确认</button>
+              <button class="scenario" data-scenario="uncertain">无法确认</button>
+              <button class="scenario" data-scenario="abnormal">异常</button>
+            </div>
+          </section>
+
+          <section class="dock-card privacy-panel">
+            <p class="section-label">隐私与摄像头</p>
+            <h2>只在检查时查看灶台区域</h2>
+            <div class="status-grid" id="deviceGrid"></div>
+          </section>
+
+          <section class="dock-card script-card">
+            <p class="section-label">演示路径</p>
+            <h2>90 秒闭环</h2>
+            <ol>
+              <li>选择一个结果场景。</li>
+              <li>点击“开始出门检查”。</li>
+              <li>看摄像头检查步骤流转。</li>
+              <li>用证据卡片完成判断。</li>
+            </ol>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/app.js?v=visual-3"></script>
+  </body>
+</html>
